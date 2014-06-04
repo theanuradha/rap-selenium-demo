@@ -27,6 +27,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -107,7 +108,16 @@ public class RapBot {
     driver.findElement( By.xpath( xpath ) ).click();
   }
 
-
+	public void rightClick(AbstractPath<?> xpath) {
+		rightClick(xpath.toString());
+	}
+	
+	private void rightClick(String xpath) {
+		checkElementCount(xpath);
+		new Actions(driver).contextClick(driver.findElement(By.xpath(xpath)))
+				.perform();
+	}
+  
   /**
    * Fires mousewheel events that may be processed by javascript. It does not
    * cause natively scrollable elements to scroll, but effects Tree, Table,
