@@ -31,6 +31,16 @@ public class XPath extends AbstractPath<ElementSelector> {
   }
 
   /**
+   * Find an element by it's "class" attribute.
+   *
+   * @param cssClass
+   * @return the new XPath
+   */
+  public static XPath byClass( String cssClass ) {
+    return any().element( with().cssClass( cssClass	 ) );
+  }
+  
+  /**
    * Find an element by it's "test-id" attribute.
    *
    * @param id
@@ -142,7 +152,8 @@ public class XPath extends AbstractPath<ElementSelector> {
       throw new IllegalArgumentException( "Offset has to be > 0" );
     }
     // TODO [tb] : Selenium does seem to have issues with syntax (but not JS) - alternatives?
-    return insert( 0, "(" ).append( ")[", valueOf( offset ), "]" );
+//    return insert( 0, "(" ).append( ")[", valueOf( offset ), "]" );
+    return append( "[", valueOf( offset ), "]" );
   }
 
   //////////////
