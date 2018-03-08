@@ -29,6 +29,16 @@ public class XPath extends AbstractPath<ElementSelector> {
   public static XPath byId( String id ) {
     return any().element( with().id( id ) );
   }
+  
+  /**
+   * Find an element by it's "name" attribute.
+   *
+   * @param name
+   * @return the new XPath
+   */
+  public static XPath byName( String name ) {
+      return any().element( with().attr("name", name ) );
+  }
 
   /**
    * Find an element by it's "test-id" attribute.

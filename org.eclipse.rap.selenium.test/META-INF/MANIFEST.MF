@@ -4,5 +4,6 @@ Bundle-Name: Test
 Bundle-SymbolicName: org.eclipse.rap.selenium.test
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Require-Bundle: org.eclipse.rap.selenium;bundle-version="1.0.0",
- org.eclipse.rap.junit;bundle-version="2.3.0"
+Require-Bundle: org.eclipse.rap.selenium;bundle-version="1.0.0"
+Import-Package: junit.framework,
+ org.junit;version="4.11.0"
