@@ -36,6 +36,24 @@ public abstract class AbstractPath<S> {
   }
 
   /**
+   * Select the following axis.
+   *
+   * @return a selector for elements on the following axis
+   */
+  public S following() {
+    return createSelector( "/following::" );
+  }
+  
+  /**
+   * Select the preceding axis.
+   *
+   * @return a selector for elements on the preceding axis
+   */
+  public S preceding() {
+    return createSelector( "/preceding::" );
+  }
+  
+  /**
    * Select the following-sibling axis.
    *
    * @return a selector for elements on the following-sibling axis

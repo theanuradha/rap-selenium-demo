@@ -107,6 +107,16 @@ public class Predicate {
   }
 
   /**
+   * Requires a node to have the given string as one of it's class values.
+   *
+   * @param string
+   * @return the new predicate
+   */
+  public Predicate cssClass( String cssClass ) {
+    return andAdd( "contains(concat(' ', normalize-space(@class), ' '), ' ", cssClass, " ')" );
+  }
+
+  /**
    * Requires a node to have the given string as it's text value.
    *
    * @param string
